@@ -1,0 +1,9 @@
+[submodule "Core/Vendor/imgui"]
+	path = Core/Vendor/imgui
+	url = https://github.com/LuckyGhostStudio/imgui
+[submodule "Core/Vendor/GLFW"]
+	path = Core/Vendor/GLFW
+	url = https://github.com/TheCherno/glfw
+[submodule "Core/Vendor/spdlog"]
+	path = Core/Vendor/spdlog
+	url = https://github.com/gabime/spdlog
