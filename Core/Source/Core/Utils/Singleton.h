@@ -3,9 +3,9 @@
 namespace LFramework
 {
     /// <summary>
-    /// 单例基类
+    /// 鍗曚緥鍩虹被
     /// </summary>
-    /// <typeparam name="T">类型</typeparam>
+    /// <typeparam name="T">绫诲瀷</typeparam>
     template<typename T>
     class Singleton
     {
