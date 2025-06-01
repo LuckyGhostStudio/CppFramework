@@ -1,5 +1,7 @@
 #pragma once
 
+#include "LFrame/Core/Base.h"
+
 namespace LFrame
 {
     /// <summary>
@@ -9,16 +11,13 @@ namespace LFrame
     template<typename T>
     class Singleton
     {
-    protected:
-        Singleton() = default;
-        virtual ~Singleton() = default;
     public:
         Singleton(const Singleton&) = delete;
         Singleton& operator=(const Singleton&) = delete;
 
         static void Create()
         {
-            // LF_ASSERT(s_Instance == nullptr);
+            LF_ASSERT(s_Instance == nullptr);
 
             if (!s_Instance)
             {
@@ -28,7 +27,7 @@ namespace LFrame
 
         static T* Get()
         {
-            // LF_ASSERT(s_Instance != nullptr)
+            LF_ASSERT(s_Instance != nullptr)
 
             return s_Instance;
         }
@@ -41,6 +40,9 @@ namespace LFrame
                 s_Instance = nullptr;
             }
         }
+    protected:
+        Singleton() = default;
+        virtual ~Singleton() = default;
     private:
         static T* s_Instance;
     };

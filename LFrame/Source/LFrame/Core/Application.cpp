@@ -6,7 +6,7 @@ namespace LFrame
 
     Application::Application()
     {
-        // LF_CORE_ASSERT(!s_Instance, "Application 已存在!");
+        LF_CORE_ASSERT(!s_Instance, "Application 已存在!");
 
         s_Instance = this;
     }
