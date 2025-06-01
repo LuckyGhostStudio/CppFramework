@@ -1,4 +1,4 @@
-project "App"
+project "LFrameApp"
    kind "ConsoleApp"
    language "C++"
    cppdialect "C++20"
@@ -14,12 +14,12 @@ project "App"
    includedirs
    {
       "Source",
-	  "../Core/Source"
+	  "../LFrame/Source"
    }
 
    links
    {
-      "Core"
+      "LFrame"
    }
 
    targetdir ("../Binaries/" .. outputdir .. "/%{prj.name}")

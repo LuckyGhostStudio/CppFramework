@@ -1,24 +1,24 @@
 -- premake5.lua
-workspace "CppFramework"        -- 解决方案名称
-    architecture "x64"          -- 体系结构
+workspace "LFrame"      -- 瑙ｅ喅鏂规鍚嶇О
+    architecture "x64"  -- 浣撶郴缁撴瀯
     configurations { "Debug", "Release", "Dist" }
-    startproject "App"
+    startproject "LFrameApp"
 
     flags { "MultiProcessorCompile" }
 
-outputdir = "%{cfg.system}-%{cfg.architecture}/%{cfg.buildcfg}"     -- 输出目录
+outputdir = "%{cfg.system}-%{cfg.architecture}/%{cfg.buildcfg}"     -- 杈撳嚭鐩綍
 
--- 依赖
+-- 渚濊禆
 group "Dependencies"
-    include "Core/Vendor/GLFW"  -- 包含 GLFW 目录
-    include "Core/Vendor/GLAD"  -- 包含 GLAD 目录
-    include "Core/Vendor/imgui" -- 包含 imgui 目录
+    include "LFrame/Vendor/GLFW"  -- 鍖呭惈 GLFW 鐩綍
+    include "LFrame/Vendor/GLAD"  -- 鍖呭惈 GLAD 鐩綍
+    include "LFrame/Vendor/imgui" -- 鍖呭惈 imgui 鐩綍
 group ""
 
 include "Dependencies.lua"
 
 group "Core"
-    include "Core/Build-Core.lua"
+    include "LFrame/Build-LFrame.lua"
 group ""
 
-include "App/Build-App.lua"
+include "LFrameApp/Build-LFrameApp.lua"

@@ -1,12 +1,12 @@
--- °üº¬Ä¿Â¼
+-- åŒ…å«ç›®å½•
 IncludeDir = {}
-IncludeDir["GLFW"] = "%{wks.location}/Lucky/Vendor/GLFW/include"
-IncludeDir["GLAD"] = "%{wks.location}/Lucky/Vendor/GLAD/include"
-IncludeDir["ImGui"] = "%{wks.location}/Lucky/Vendor/imgui"
---IncludeDir["glm"] = "%{wks.location}/Lucky/Vendor/glm"
-IncludeDir["stb_image"] = "%{wks.location}/Lucky/Vendor/stb_image"
+IncludeDir["GLFW"] = "%{wks.location}/LFrame/Vendor/GLFW/include"
+IncludeDir["GLAD"] = "%{wks.location}/LFrame/Vendor/GLAD/include"
+IncludeDir["ImGui"] = "%{wks.location}/LFrame/Vendor/imgui"
+--IncludeDir["glm"] = "%{wks.location}/LFrame/Vendor/glm"
+IncludeDir["stb_image"] = "%{wks.location}/LFrame/Vendor/stb_image"
 
--- ¿âÄ¿Â¼
+-- åº“ç›®å½•
 LibraryDir = {}
 
 -- Libs

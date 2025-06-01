@@ -1,11 +1,11 @@
 #pragma once
 
-namespace LFramework
+namespace LFrame
 {
     /// <summary>
-    /// 鍗曚緥鍩虹被
+    /// 单例基类
     /// </summary>
-    /// <typeparam name="T">绫诲瀷</typeparam>
+    /// <typeparam name="T">类型</typeparam>
     template<typename T>
     class Singleton
     {
@@ -26,11 +26,11 @@ namespace LFramework
             }
         }
 
-        static T& Get()
+        static T* Get()
         {
             // LF_ASSERT(s_Instance != nullptr)
 
-            return *s_Instance;
+            return s_Instance;
         }
 
         static void Destroy()

@@ -1,9 +1,9 @@
-[submodule "Core/Vendor/imgui"]
-	path = Core/Vendor/imgui
-	url = https://github.com/LuckyGhostStudio/imgui
-[submodule "Core/Vendor/GLFW"]
-	path = Core/Vendor/GLFW
-	url = https://github.com/TheCherno/glfw
-[submodule "Core/Vendor/spdlog"]
-	path = Core/Vendor/spdlog
+[submodule "LFrame/Vendor/spdlog"]
+	path = LFrame/Vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "LFrame/Vendor/GLFW"]
+	path = LFrame/Vendor/GLFW
+	url = https://github.com/TheCherno/glfw
+[submodule "LFrame/Vendor/imgui"]
+	path = LFrame/Vendor/imgui
+	url = https://github.com/LuckyGhostStudio/imgui
