@@ -1,6 +1,8 @@
 #pragma once
 
 #include "Base.h"
+#include "Window.h"
+#include "Events/ApplicationEvent.h"
 
 namespace LFrame
 {
@@ -13,15 +15,44 @@ namespace LFrame
         Application();
         virtual ~Application();
 
+        /// <summary>
+        /// 事件回调函数
+        /// </summary>
+        /// <param name="e">事件</param>
+        void OnEvent(Event& e);
+
+        /// <summary>
+        /// 运行：主循环
+        /// </summary>
         void Run();
 
+        /// <summary>
+        /// 关闭
+        /// </summary>
         void Close();
 
         static Application& GetInstance() { return *s_Instance; }
     private:
+        /// <summary>
+        /// 窗口关闭回调函数
+        /// </summary>
+        /// <param name="e">窗口关闭事件</param>
+        /// <returns>是否已关闭</returns>
+        bool OnWindowClose(WindowCloseEvent& e);
+
+        /// <summary>
+        /// 窗口缩放时调用
+        /// </summary>
+        /// <param name="e">窗口缩放事件</param>
+        /// <returns>事件处理结果</returns>
+        bool OnWindowResize(WindowResizeEvent& e);
+    private:
         static Application* s_Instance;
 
-        bool m_Running = true;
+        Scope<Window> m_Window;     // 窗口
+
+        bool m_Running = true;      // 运行
+        bool m_Minimized = false;   // 最小化
     };
 
     /// <summary>

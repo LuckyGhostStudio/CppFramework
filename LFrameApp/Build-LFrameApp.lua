@@ -5,6 +5,9 @@ project "LFrameApp"
     targetdir "Binaries/%{cfg.buildcfg}"
     staticruntime "off"
 
+    targetdir ("../Binaries/" .. outputdir .. "/%{prj.name}")
+    objdir ("../Binaries/Intermediates/" .. outputdir .. "/%{prj.name}")
+
     files 
     { 
         "Source/**.h",
@@ -14,10 +17,10 @@ project "LFrameApp"
     includedirs
     {
         "Source",
-        "../LFrame/Source",
         "%{wks.location}/LFrame/Vendor/spdlog/include",
         "%{wks.location}/LFrame/Source",
         "%{wks.location}/LFrame/Vendor",
+        "%{IncludeDir.GLFW}",
     }
 
     links
@@ -25,26 +28,23 @@ project "LFrameApp"
         "LFrame"
     }
 
-    targetdir ("../Binaries/" .. outputdir .. "/%{prj.name}")
-    objdir ("../Binaries/Intermediates/" .. outputdir .. "/%{prj.name}")
-
     filter "system:windows"
         systemversion "latest"
         defines { "WINDOWS" }
 
     filter "configurations:Debug"
-        defines { "DEBUG" }
+        defines { "LF_DEBUG" }
         runtime "Debug"
         symbols "On"
 
     filter "configurations:Release"
-        defines { "RELEASE" }
+        defines { "LF_RELEASE" }
         runtime "Release"
         optimize "On"
         symbols "On"
 
     filter "configurations:Dist"
-        defines { "DIST" }
+        defines { "LF_DIST" }
         runtime "Release"
         optimize "On"
         symbols "Off"
