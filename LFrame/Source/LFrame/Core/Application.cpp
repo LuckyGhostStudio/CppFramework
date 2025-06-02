@@ -1,5 +1,8 @@
 #include "Application.h"
 
+#include "Events/ApplicationEvent.h"
+#include "Log.h"
+
 namespace LFrame
 {
     Application* Application::s_Instance = nullptr;
@@ -17,6 +20,18 @@ namespace LFrame
 
     void Application::Run()
     {
+        WindowResizeEvent e(1280, 720);
+
+        if (e.IsInCategory(EventCategoryApplication))
+        {
+            LF_TRACE(e.ToString());
+        }
+
+        if (e.IsInCategory(EventCategoryInput))
+        {
+            LF_TRACE(e.ToString());
+        }
+
         while (m_Running)
         {
 
