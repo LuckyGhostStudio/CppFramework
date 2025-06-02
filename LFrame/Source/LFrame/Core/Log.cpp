@@ -15,7 +15,7 @@ namespace LFrame
         s_CoreLogger = spdlog::stdout_color_mt("LFrame");
         s_CoreLogger->set_level(spdlog::level::trace);      // ÉèÖÃ²ã¼¶
 
-        s_ClientLogger = spdlog::stdout_color_mt("APP");
+        s_ClientLogger = spdlog::stdout_color_mt("LFrameApp");
         s_ClientLogger->set_level(spdlog::level::trace);
     }
 }

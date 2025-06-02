@@ -16,6 +16,9 @@ namespace LFrame
 
         m_Window = Window::Create(WindowProps());                               // 创建窗口
         m_Window->SetEventCallback(LF_BIND_EVENT_FUNC(Application::OnEvent));   // 设置回调函数
+
+        m_ImGuiLayer = new ImGuiLayer();    // 创建 ImGui 层
+        PushOverlay(m_ImGuiLayer);          // 添加 ImGuiLayer 到覆盖层
     }
 
     Application::~Application()
@@ -52,9 +55,17 @@ namespace LFrame
                 {
                     layer->OnUpdate();
                 }
+
+                // ImGui渲染
+                m_ImGuiLayer->Begin();
+                for (Layer* layer : m_LayerStack)
+                {
+                    layer->OnImGuiRender();
+                }
+                m_ImGuiLayer->End();
             }
 
-            m_Window->OnUpdate();           // 更新窗口
+            m_Window->OnUpdate();   // 更新窗口
         }
     }
 

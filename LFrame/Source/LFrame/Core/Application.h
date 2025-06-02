@@ -3,6 +3,7 @@
 #include "Base.h"
 #include "Window.h"
 #include "LayerStack.h"
+#include "LFrame/ImGui/ImGuiLayer.h"
 #include "Events/ApplicationEvent.h"
 
 namespace LFrame
@@ -57,6 +58,10 @@ namespace LFrame
         void Close();
 
         static Application& GetInstance() { return *s_Instance; }
+
+        Window& GetWindow() { return *m_Window; }
+
+        ImGuiLayer* GetImGuiLayer() { return m_ImGuiLayer; }
     private:
         /// <summary>
         /// 窗口关闭回调函数
@@ -75,7 +80,9 @@ namespace LFrame
         static Application* s_Instance;
 
         Scope<Window> m_Window;     // 窗口
+
         LayerStack m_LayerStack;    // 层栈
+        ImGuiLayer* m_ImGuiLayer;
 
         bool m_Running = true;      // 运行
         bool m_Minimized = false;   // 最小化
