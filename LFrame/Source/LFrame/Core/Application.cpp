@@ -20,33 +20,40 @@ namespace LFrame
 
     Application::~Application()
     {
+
     }
 
-    void Application::OnEvent(Event& e)
+    void Application::OnEvent(Event& event)
     {
-        EventDispatcher dispatcher(e);  // 事件调度器
+        EventDispatcher dispatcher(event);  // 事件调度器
         dispatcher.Dispatch<WindowCloseEvent>(LF_BIND_EVENT_FUNC(Application::OnWindowClose));      // 窗口关闭事件
         dispatcher.Dispatch<WindowResizeEvent>(LF_BIND_EVENT_FUNC(Application::OnWindowResize));    // 窗口大小改变事件
 
-        LF_CORE_TRACE("{0}", e.ToString());
+        // 从最顶层向下遍历层栈
+        for (auto it = m_LayerStack.end(); it != m_LayerStack.begin();)
+        {
+            if (event.m_Handled)
+            {
+                break;  // 事件已处理
+            }
+            (*--it)->OnEvent(event);    // 层获取并处理事件
+        }
     }
 
     void Application::Run()
     {
-        WindowResizeEvent e(1280, 720);
-
-        if (e.IsInCategory(EventCategoryApplication))
-        {
-            LF_TRACE(e.ToString());
-        }
-
-        if (e.IsInCategory(EventCategoryInput))
-        {
-            LF_TRACE(e.ToString());
-        }
-
         while (m_Running)
         {
+            // 窗口未最小化
+            if (!m_Minimized)
+            {
+                // 更新层栈中所有层
+                for (Layer* layer : m_LayerStack)
+                {
+                    layer->OnUpdate();
+                }
+            }
+
             m_Window->OnUpdate();           // 更新窗口
         }
     }

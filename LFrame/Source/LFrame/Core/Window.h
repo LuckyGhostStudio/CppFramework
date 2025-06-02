@@ -4,7 +4,7 @@
 
 #include "LFrame/Core/Base.h"
 #include "LFrame/Core/Events/Event.h"
-// #include "LFrame/Renderer/OpenGLContext.h"
+#include "LFrame/Core/OpenGLContext.h"
 
 namespace LFrame
 {
@@ -77,9 +77,8 @@ namespace LFrame
         /// 设置 DPI
         /// </summary>
         /// <param name="dpi"></param>
-        void SetDPI(unsigned int dpi);
-
-        unsigned int GetDPI() const;
+        void SetDPI(unsigned int dpi) { m_Data.DPI = dpi; }
+        unsigned int GetDPI() const { return m_Data.DPI; }
 
         /// <summary>
         /// 返回 GLFW 窗口
@@ -99,7 +98,7 @@ namespace LFrame
         virtual void Shutdown();
     private:
         GLFWwindow* m_Window;           // GLFW 窗口
-        //Scope<OpenGLContext> m_Context; // OpenGL 上下文
+        Scope<OpenGLContext> m_Context; // OpenGL 上下文
 
         /// <summary>
         /// 窗口数据

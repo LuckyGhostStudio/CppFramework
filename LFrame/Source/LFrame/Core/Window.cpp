@@ -56,8 +56,8 @@ namespace LFrame
         // 创建 GLFW 窗口
         m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 
-        //m_Context = OpenGLContext::Create(m_Window);    // 创建 OpenGL 上下文
-        //m_Context->Init();                              // 初始化上下文
+        m_Context = OpenGLContext::Create(m_Window);    // 创建 OpenGL 上下文
+        m_Context->Init();                              // 初始化上下文
 
         glfwSetWindowUserPointer(m_Window, &m_Data);    // 将数据 m_Data 传递给 m_Window
 
@@ -175,15 +175,15 @@ namespace LFrame
 
     void Window::OnUpdate()
     {
-        glfwPollEvents();               // 轮询所有待处理的事件
-        //m_Context->SwapBuffers();       // 交换前后缓冲区
+        glfwPollEvents();           // 轮询所有待处理的事件
+        m_Context->SwapBuffers();   // 交换前后缓冲区
     }
 
     void Window::SetVSync(bool enabled)
     {
         if (enabled)
         {
-            glfwSwapInterval(1);        // 交换间隔为 1 帧
+            glfwSwapInterval(1);    // 交换间隔为 1 帧
         }
         else
         {
@@ -196,15 +196,5 @@ namespace LFrame
     bool Window::IsVSync() const
     {
         return m_Data.VSync;
-    }
-
-    void Window::SetDPI(unsigned int dpi)
-    {
-        m_Data.DPI = dpi;
-    }
-
-    unsigned int Window::GetDPI() const
-    {
-        return m_Data.DPI;
     }
 }
