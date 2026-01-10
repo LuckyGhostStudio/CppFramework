@@ -1,14 +1,23 @@
-# Directories
-.vs/
+# Binaries
 Binaries/
+bin/
+**/bin/
+bin-int/
+Intermediates/
 
 # Files
-*.vcxproj
-*.vcxproj.user
-*.vcxproj.filters
-*.sln
 *.log
-Makefile
+*.ini
 
 # Exclude
 !Vendor/Binaries
+
+# VS Files
+.vs
+**.sln
+**.vcxproj
+**.vcxproj.user
+**.vcxproj.filters
+**.csproj
+**.csproj.user
+.editorconfig
