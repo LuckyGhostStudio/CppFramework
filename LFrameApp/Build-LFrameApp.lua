@@ -21,6 +21,7 @@ project "LFrameApp"
         "%{wks.location}/LFrame/Source",
         "%{wks.location}/LFrame/Vendor",
         "%{IncludeDir.GLFW}",
+        "%{IncludeDir.glm}",
     }
 
     links

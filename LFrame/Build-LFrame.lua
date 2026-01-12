@@ -17,6 +17,8 @@ project "LFrame"
         "Source/**.cpp",
         "Vendor/stb_image/**.h",
         "Vendor/stb_image/**.cpp",
+        "Vendor/glm/glm/**.hpp",
+        "Vendor/glm/glm/**.inl",
     }
 
     includedirs         -- ¸½¼Ó°üº¬Ä¿Â¼
@@ -28,6 +30,7 @@ project "LFrame"
         "%{IncludeDir.GLAD}",
         "%{IncludeDir.ImGui}",
         "%{IncludeDir.stb_image}",
+        "%{IncludeDir.glm}",
     }
 
     links
