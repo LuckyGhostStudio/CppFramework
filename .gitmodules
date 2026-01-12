@@ -7,3 +7,6 @@
 [submodule "LFrame/Vendor/imgui"]
 	path = LFrame/Vendor/imgui
 	url = https://github.com/LuckyGhostStudio/imgui
+[submodule "LFrame/Vendor/glm"]
+	path = LFrame/Vendor/glm
+	url = https://github.com/g-truc/glm
