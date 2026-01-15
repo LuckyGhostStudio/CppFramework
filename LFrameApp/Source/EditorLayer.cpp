@@ -25,7 +25,8 @@ namespace LFrame
 
     void EditorLayer::OnImGuiRender()
     {
-
+        // ‰÷»æ DockSpace
+        m_EditorDockSpace.ImGuiRender();
     }
 
     void EditorLayer::OnEvent(Event& event)
