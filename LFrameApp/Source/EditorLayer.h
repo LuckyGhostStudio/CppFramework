@@ -3,6 +3,7 @@
 #include <LFrame.h>
 
 #include "EditorDockSpace.h"
+#include "LFrame/Core/Editor/PanelManager.h"
 
 namespace LFrame
 {
@@ -22,7 +23,11 @@ namespace LFrame
         virtual void OnImGuiRender() override;
 
         virtual void OnEvent(Event& event) override;
+
+        void UI_DrawMenuBar();
     private:
         EditorDockSpace m_EditorDockSpace;  // Í£¿¿¿Õ¼ä
+
+        Scope<PanelManager> m_PanelManager; // ±à¼­Æ÷Ãæ°å¹ÜÀíÆ÷
     };
 }

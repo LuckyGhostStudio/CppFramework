@@ -1,5 +1,8 @@
 #include "EditorDockSpace.h"
 
+#include <imgui/imgui.h>
+#include <imgui/imgui_internal.h>
+
 namespace LFrame
 {
     EditorDockSpace::EditorDockSpace(bool fullScreen)

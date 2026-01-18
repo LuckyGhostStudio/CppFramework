@@ -62,4 +62,11 @@ namespace LFrame
     {
         return std::make_shared<T>(std::forward<Args>(args)...);
     }
+
+    template<typename T1, typename T2>
+    Ref<T2> RefAs(const Ref<T1>& ref)
+    {
+        static_assert(std::is_base_of<T1, T2>::value, "DynamicCast requires T2 to be derived from T1");
+        return std::dynamic_pointer_cast<T2>(ref);
+    }
 }
