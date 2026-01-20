@@ -16,7 +16,7 @@ namespace LFrame
         /// <summary>
         /// 渲染 ImGui 时调用
         /// </summary>
-        /// <param name">面板名称</param>
+        /// <param name="name">面板名称</param>
         /// <param name="isOpen">是否打开</param>
         virtual void OnImGuiRender(const char* name, bool& isOpen);
 

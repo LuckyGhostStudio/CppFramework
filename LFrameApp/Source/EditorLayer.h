@@ -3,7 +3,7 @@
 #include <LFrame.h>
 
 #include "EditorDockSpace.h"
-#include "LFrame/Core/Editor/PanelManager.h"
+#include "LFrame/Editor/PanelManager.h"
 
 namespace LFrame
 {

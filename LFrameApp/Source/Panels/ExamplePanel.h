@@ -1,6 +1,6 @@
 #pragma once
 
-#include "LFrame/Core/Editor/EditorPanel.h"
+#include "LFrame/Editor/EditorPanel.h"
 
 namespace LFrame
 {
