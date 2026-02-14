@@ -3,7 +3,7 @@
 #include <imgui/imgui.h>
 #include <imgui/imgui_internal.h>
 
-namespace LFrame
+namespace Lucky
 {
     EditorDockSpace::EditorDockSpace(bool fullScreen)
         : m_IsFullScreen(fullScreen),

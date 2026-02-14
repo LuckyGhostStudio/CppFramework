@@ -1,11 +1,11 @@
 #pragma once
 
-#include <LFrame.h>
+#include <Lucky.h>
 
 #include "EditorDockSpace.h"
-#include "LFrame/Editor/PanelManager.h"
+#include "Lucky/Editor/PanelManager.h"
 
-namespace LFrame
+namespace Lucky
 {
     class EditorLayer : public Layer
     {

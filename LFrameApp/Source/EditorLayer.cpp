@@ -4,7 +4,7 @@
 
 #include "Panels/ExamplePanel.h"
 
-namespace LFrame
+namespace Lucky
 {
 #define SCENE_EXAMPLE_PANEL_ID "ExamplePanel"
 

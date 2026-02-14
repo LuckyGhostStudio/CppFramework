@@ -3,10 +3,16 @@
 #include <imgui/imgui.h>
 #include <imgui/imgui_internal.h>
 
-#include <LFrame/Utils/PlatformUtils.h>
+#include <Lucky/Utils/PlatformUtils.h>
+#include <Lucky/Editor/EditorUtility.h>
 
-namespace LFrame
+namespace Lucky
 {
+    ExamplePanel::ExamplePanel()
+    {
+        
+    }
+
     void ExamplePanel::OnGUI()
     {
         if (ImGui::Button("Open File Dialog"))

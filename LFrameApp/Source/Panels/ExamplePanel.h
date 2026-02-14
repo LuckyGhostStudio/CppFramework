@@ -1,13 +1,13 @@
 #pragma once
 
-#include "LFrame/Editor/EditorPanel.h"
+#include <Lucky/Editor/EditorPanel.h>
 
-namespace LFrame
+namespace Lucky
 {
     class ExamplePanel : public EditorPanel
     {
     public:
-        ExamplePanel() = default;
+        ExamplePanel();
         ~ExamplePanel() = default;
 
         void OnGUI() override;

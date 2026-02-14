@@ -1,5 +1,5 @@
-project "LFrameApp"
-    kind "ConsoleApp"
+project "Lucky"
+    kind "StaticLib"
     language "C++"
     cppdialect "C++20"
     targetdir "Binaries/%{cfg.buildcfg}"
@@ -8,30 +8,54 @@ project "LFrameApp"
     targetdir ("../Binaries/" .. outputdir .. "/%{prj.name}")
     objdir ("../Binaries/Intermediates/" .. outputdir .. "/%{prj.name}")
 
-    files 
-    { 
+    pchheader "lpch.h"
+    pchsource "Source/lpch.cpp"
+
+    files
+    {
         "Source/**.h",
-        "Source/**.cpp"
+        "Source/**.cpp",
+        "Vendor/stb_image/**.h",
+        "Vendor/stb_image/**.cpp",
+        "Vendor/glm/glm/**.hpp",
+        "Vendor/glm/glm/**.inl",
     }
 
     includedirs
     {
         "Source",
-        "%{wks.location}/Lucky/Vendor/spdlog/include",
-        "%{wks.location}/Lucky/Source",
-        "%{wks.location}/Lucky/Vendor",
+        "Vendor",
+        "Vendor/spdlog/include",
         "%{IncludeDir.GLFW}",
+        "%{IncludeDir.GLAD}",
+        "%{IncludeDir.ImGui}",
+        "%{IncludeDir.stb_image}",
         "%{IncludeDir.glm}",
     }
 
     links
     {
-        "Lucky"
+        "GLFW",
+        "GLAD",
+        "ImGui",
+        "opengl32.lib",
     }
 
     filter "system:windows"
         systemversion "latest"
-        defines { "WINDOWS" }
+
+        defines
+        {
+            "GLFW_INCLUDE_NONE"
+        }
+
+        links
+        {
+            "%{Library.WinSock}",
+            "%{Library.WinMM}",
+            "%{Library.WinVersion}",
+            "%{Library.BCrypt}",
+        }
 
     filter "configurations:Debug"
         defines { "LF_DEBUG" }

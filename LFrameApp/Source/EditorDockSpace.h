@@ -1,6 +1,6 @@
 #pragma once
 
-namespace LFrame
+namespace Lucky
 {
     typedef unsigned int uint32_t;
 

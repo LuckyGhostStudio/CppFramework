@@ -1,12 +1,12 @@
-[submodule "LFrame/Vendor/spdlog"]
-	path = LFrame/Vendor/spdlog
+[submodule "Lucky/Vendor/spdlog"]
+	path = Lucky/Vendor/spdlog
 	url = https://github.com/gabime/spdlog
-[submodule "LFrame/Vendor/GLFW"]
-	path = LFrame/Vendor/GLFW
+[submodule "Lucky/Vendor/GLFW"]
+	path = Lucky/Vendor/GLFW
 	url = https://github.com/TheCherno/glfw
-[submodule "LFrame/Vendor/imgui"]
-	path = LFrame/Vendor/imgui
+[submodule "Lucky/Vendor/imgui"]
+	path = Lucky/Vendor/imgui
 	url = https://github.com/LuckyGhostStudio/imgui
-[submodule "LFrame/Vendor/glm"]
-	path = LFrame/Vendor/glm
+[submodule "Lucky/Vendor/glm"]
+	path = Lucky/Vendor/glm
 	url = https://github.com/g-truc/glm

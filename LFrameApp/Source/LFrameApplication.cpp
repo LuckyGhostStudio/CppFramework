@@ -1,19 +1,19 @@
-#include <LFrame.h>
-#include <LFrame/Core/EntryPoint.h>
+#include <Lucky.h>
+#include <Lucky/Core/EntryPoint.h>
 
 #include "EditorLayer.h"
 
-class LFrameApplication : public LFrame::Application
+class LFrameApplication : public Lucky::Application
 {
 public:
     LFrameApplication()
-        : LFrame::Application()
+        : Lucky::Application()
     {
-        PushLayer(new LFrame::EditorLayer());
+        PushLayer(new Lucky::EditorLayer());
     }
 };
 
-LFrame::Application* LFrame::CreateApplication()
+Lucky::Application* Lucky::CreateApplication()
 {
     return new LFrameApplication();
 }
