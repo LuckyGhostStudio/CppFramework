@@ -28,7 +28,7 @@ namespace Lucky
         LF_TRACE("EditorLayer::OnDetach");
     }
 
-    void EditorLayer::OnUpdate()
+    void EditorLayer::OnUpdate(DeltaTime dt)
     {
         
     }
